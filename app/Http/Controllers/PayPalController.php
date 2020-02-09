@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Mail\OrderPaid;
 use Illuminate\Http\Request;
 use NunoMaduro\Collision\Provider;
+use Illuminate\Support\Facades\Mail;
 use Srmklive\PayPal\Services\ExpressCheckout;
 
 class PayPalController extends Controller
@@ -72,15 +74,23 @@ class PayPalController extends Controller
             $payment_status = $provider->doExpressCheckoutPayment($checkoutData, $token, $payerId);
             $status = $payment_status['PAYMENTINFO_0_PAYMENTSTATUS'];
 
-            if(in_array($status, ['Completed', 'Processed'])) {
+            if(in_array($status, ['Completed','Processed'])) {
                 $order = Order::find($orderId);
                 $order->is_paid = 1;
                 $order->save();
+
+                //send mail
+
+                Mail::to($order->user->email)->send(new OrderPaid($order));
+
+
+                return redirect()->route('home')->withMessage('Payment successful!');
             }
 
-            dd('payment status', $payment_status);
         }
 
-        dd('Payment successfull');
+        return redirect()->route('home')->withError('Payment UnSuccessful! Something went wrong!');
+
+
     }
 }
