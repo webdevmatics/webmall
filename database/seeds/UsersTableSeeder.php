@@ -21,8 +21,8 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'role_id' => 1,
-                'name' => 'Josiah Bernier',
-                'email' => 'bhattahitesh@gmail.com',
+                'name' => 'Admin',
+                'email' => 'admin@webmall.com',
                 'avatar' => 'users/default.png',
                 'email_verified_at' => '2020-02-09 12:42:53',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -34,9 +34,23 @@ class UsersTableSeeder extends Seeder
             1 => 
             array (
                 'id' => 2,
-                'role_id' => 1,
-                'name' => 'admin',
-                'email' => 'admin@admin.com',
+                'role_id' => 2,
+                'name' => 'customer 1',
+                'email' => 'customer@webmall.com',
+                'avatar' => 'users/default.png',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$xJacK/k89sSDbvDvqaMnC.KLEHOZr/YhqQMVSrvrTVhjggQgVhzpq',
+                'remember_token' => NULL,
+                'settings' => NULL,
+                'created_at' => '2020-02-11 00:16:34',
+                'updated_at' => '2020-02-11 00:16:34',
+            ),
+            3 =>
+            array (
+                'id' => 3,
+                'role_id' => 2,
+                'name' => 'customer 2',
+                'email' => 'customer2@webmall.com',
                 'avatar' => 'users/default.png',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$xJacK/k89sSDbvDvqaMnC.KLEHOZr/YhqQMVSrvrTVhjggQgVhzpq',
