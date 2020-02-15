@@ -147,14 +147,34 @@
 
         <div class="col-md-4">
 
-            <div class="panel panel-bordered" style="padding-bottom:5px;">
-
-                <h2 class="panel-heading">Order Items</h2>
+            <div class="panel panel-bordered ">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Order Items</h3>
+                </div>
                 <div class="panel-body">
-                    Panel content
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($dataTypeContent->items as $item)
+                            <tr>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->pivot->quantity}}</td>
+                                <td>{{$item->pivot->price}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                    <p>Total: $ {{$dataTypeContent->grand_total}}</p>
+
                 </div>
             </div>
-
         </div>
     </div>
 </div>
