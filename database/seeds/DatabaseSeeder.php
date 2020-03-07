@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
 
         // factory(User::class)->create(['email'=>'bhattahitesh@gmail.com']);
 
-        $this->call(ProductSeeder::class);
+
         $this->call(DataTypesTableSeeder::class);
         $this->call(DataRowsTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
@@ -30,5 +30,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UsersTableSeeder::class);
 
+        $this->call(ShopSeeder::class);
+        $this->call(ProductSeeder::class);
+
+        $this->call(UserRolesTableSeeder::class);
     }
 }
