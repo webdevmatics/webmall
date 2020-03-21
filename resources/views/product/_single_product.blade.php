@@ -2,7 +2,7 @@
     <div class="product-wrapper product-border mb-24">
         <div class="product-img-3">
             <a href="product-details.html">
-                <img src="assets/img/product/electro/1.jpg" alt="">
+                <img src="/assets/img/product/electro/1.jpg" alt="">
             </a>
             <div class="product-action-right">
                 <a class="animate-right" href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
