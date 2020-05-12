@@ -16,11 +16,9 @@ class PayPalController extends Controller
     {
         $checkoutData = $this->checkoutData($orderId);
 
-
         $provider = new ExpressCheckout();
 
         $response = $provider->setExpressCheckout($checkoutData);
-
 
         return redirect($response['paypal_link']);
     }
@@ -29,11 +27,12 @@ class PayPalController extends Controller
     {
         $cart = \Cart::session(auth()->id());
 
-        $cartItems = array_map(function ($item) {
+        $cartItems = array_map(function ($item) use($cart) {
             return [
                 'name' => $item['name'],
                 'price' => $item['price'],
                 'qty' => $item['quantity']
+
             ];
         }, $cart->getContent()->toarray());
 
@@ -45,7 +44,8 @@ class PayPalController extends Controller
             'cancel_url' => route('paypal.cancel'),
             'invoice_id' => uniqid(),
             'invoice_description' => " Order description ",
-            'total' => $cart->getTotal()
+            'total' => $cart->getSubTotal(),
+            'shipping_discount' => $cart->getSubTotal() - $cart->getTotal()
 
         ];
 
