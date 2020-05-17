@@ -2,5 +2,5 @@
 
 
 @section('content')
-    @livewire('cart')
+    @livewire('mall-cart')
 @endsection
