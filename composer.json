@@ -21,6 +21,7 @@
         "tcg/voyager": "1.4.*"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.4",
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
         "mockery/mockery": "^1.0",

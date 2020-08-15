@@ -1,5 +1,7 @@
 <?php
 
+use App\Order;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,5 +42,20 @@ Route::get('paypal/checkout-cancel', 'PayPalController@cancelPage')->name('paypa
 
 
 Route::group(['prefix' => 'admin'], function () {
+
     Voyager::routes();
+
+    Route::get('/order/pay/{suborder}', 'SubOrderController@pay')->name('order.pay');
+
+
+});
+
+
+Route::group(['prefix' => 'seller', 'middleware' => 'auth', 'as' => 'seller.', 'namespace' => 'Seller'], function () {
+
+    Route::redirect('/','seller/orders');
+
+    Route::resource('/orders',  'OrderController');
+
+    Route::get('/orders/delivered/{suborder}',  'OrderController@markDelivered')->name('order.delivered');
 });
