@@ -1,6 +1,7 @@
 <?php
 
 use App\Order;
+use App\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,14 @@ use App\Order;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('testing', function () {
+
+
+    $pro = Product::search('fuga')->paginate(10);
+
+    dd($pro);
+
+});
 
 Route::redirect('/', '/home');
 
@@ -56,6 +65,9 @@ Route::group(['prefix' => 'seller', 'middleware' => 'auth', 'as' => 'seller.', '
     Route::redirect('/','seller/orders');
 
     Route::resource('/orders',  'OrderController');
+    Route::resource('/products',  'ProductController');
+
+    Route::get('/products2','ProductController@index2');
 
     Route::get('/orders/delivered/{suborder}',  'OrderController@markDelivered')->name('order.delivered');
 });

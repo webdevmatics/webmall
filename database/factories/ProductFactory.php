@@ -10,6 +10,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'name' => $faker->sentence(2),
         'description' => $faker->sentence(20),
         'price' => $faker->numberBetween(100, 5000),
+        'shop_id'=> $faker->randomElement([2,3])
 
     ];
 });

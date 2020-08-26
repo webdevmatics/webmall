@@ -19,8 +19,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
 
+    @livewireStyles
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -120,8 +122,9 @@
                 <div class="col-3">
 
                     <div class="list-group">
-                        <a href="/seller" class="list-group-item list-group-item-action active">Dashboard</a>
-                        <a href=" {{route('seller.orders.index')}} " class="list-group-item list-group-item-action">Orders</a>
+                        {{-- <a href="/seller" class="list-group-item list-group-item-action active">Dashboard</a> --}}
+                        <a href=" {{route('seller.orders.index')}} " class="list-group-item  list-group-item-action">Orders</a>
+                        <a href=" {{route('seller.products.index')}} " class="list-group-item  list-group-item-action">Products</a>
                         <a href=" {{url('/admin/shops')}} " class="list-group-item list-group-item-action">Go to Shop</a>
                     </div>
 
@@ -134,6 +137,9 @@
             </div>
         </main>
     </div>
+
+
+    @livewireScripts
 </body>
 
 </html>
