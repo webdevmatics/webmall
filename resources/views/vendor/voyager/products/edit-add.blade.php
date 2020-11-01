@@ -7,6 +7,7 @@ $add = is_null($dataTypeContent->getKey());
 
 @section('css')
 <meta name="csrf-token" content="{{ csrf_token() }}">
+@livewireStyles
 @stop
 
 @section('page_title', __('voyager::generic.'.($edit ? 'edit' : 'add')).'
@@ -101,6 +102,29 @@ $add = is_null($dataTypeContent->getKey());
                             @endforeach
                             @endif
                         </div>
+                        @endforeach
+
+
+                        @php
+                           $attributeOptions = \App\Attribute::with('values')->get();
+                        @endphp
+
+                        @foreach($attributeOptions as $attr)
+
+                        <p>
+
+                            <div class="form-group">
+                                <label for="">{{$attr->name}} :</label>
+                                <select class="form-control" name="product_attributes[{{$attr->name}}]" >
+                                    <option value=""></option>
+                                    @foreach ($attr->values as $val)
+                                    <option {{ (!empty(json_decode($dataTypeContent->product_attributes,true)[$attr->name]) && json_decode($dataTypeContent->product_attributes,true)[$attr->name] == $val->value) ? 'selected' : '' }} >{{$val->value}}</option>
+                                    @endforeach
+
+                                </select>
+                            </div>
+                        </p>
+
                         @endforeach
 
                     </div><!-- panel-body -->
@@ -224,4 +248,6 @@ $add = is_null($dataTypeContent->getKey());
             $('[data-toggle="tooltip"]').tooltip();
         });
 </script>
+
+@livewireScripts
 @stop
