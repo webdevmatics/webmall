@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/assets/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" href="/assets/css/icofont.css">
     <link rel="stylesheet" href="/assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="/assets/css/jquery-ui.css">
     <link rel="stylesheet" href="/assets/css/bundle.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
