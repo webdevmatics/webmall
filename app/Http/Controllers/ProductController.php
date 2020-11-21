@@ -25,7 +25,7 @@ class ProductController extends Controller
 
             $products = $category->allProducts();
         }else{
-            $products = Product::take(10)->get();
+            $products = Product::take(30)->get();
         }
 
         return view('product.index', compact('products', 'categoryName'));
