@@ -15,6 +15,6 @@ Set application key
 
 And Migrate with
 
-`php artisan migrate`
+`php artisan migrate --seed`
 
  `php artisan storage:link`
