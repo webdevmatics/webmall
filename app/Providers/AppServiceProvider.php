@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Shop;
 use App\Category;
 use App\Observers\ShopObserver;
+use Illuminate\Support\Facades\Schema;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\ServiceProvider;
 
@@ -29,11 +30,14 @@ class AppServiceProvider extends ServiceProvider
     {
         Shop::observe(ShopObserver::class);
 
-        $categories = cache()->remember('categories','3600', function(){
-            return Category::whereNull('parent_id')->get();
-        });
+        if(Schema::hasTable('categories')) {
 
-        view()->share('categories', $categories);
+            $categories = cache()->remember('categories','3600', function(){
+                return Category::whereNull('parent_id')->get();
+            });
+
+            view()->share('categories', $categories);
+        }
 
     }
 }
