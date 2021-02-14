@@ -46,7 +46,7 @@
 
     <div class="form-check">
         <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="payment_method" id="" value="cash_on_delivery">
+            <input type="radio" checked class="form-check-input" name="payment_method" id="" value="cash_on_delivery">
             Cash on delivery
 
         </label>
