@@ -3,11 +3,13 @@ Clone repo
 
 `git clone https://github.com/webdevmatics/webmall.git`
 
+`Save .env.example as .env and put your database credentials`
+
+
 Install the composer dependencies
 
 `composer install`
 
-`Save .env.example as .env and put your database credentials`
 
 Set application key
 
