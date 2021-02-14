@@ -20,3 +20,10 @@ And Migrate with
 `php artisan migrate --seed` or `php artisan migrate:fresh --seed`
 
  `php artisan storage:link`
+
+
+Login Credentials for admin panel
+
+ admin@webmall.com  password : password
+ seller1@webmall.com  password : password
+ seller2@webmall.com  password : password
