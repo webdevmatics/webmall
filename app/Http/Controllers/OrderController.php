@@ -85,28 +85,21 @@ class OrderController extends Controller
 
         $order->save();
 
-        //save order items
-
         $cartItems = \Cart::session(auth()->id())->getContent();
 
         foreach($cartItems as $item) {
             $order->items()->attach($item->id, ['price'=> $item->price, 'quantity'=> $item->quantity]);
         }
 
+        $order->generateSubOrders();
 
-        //payment
-        if(request('payment_method') == 'paypal') {
-                //redirect to paypal
+        if (request('payment_method') == 'paypal') {
+
             return redirect()->route('paypal.checkout', $order->id);
 
         }
 
-        $order->generateSubOrders();
-
-        //empty cart
         \Cart::session(auth()->id())->clear();
-        //send email to customer
-
 
         return redirect()->route('home')->withMessage('Order has been placed');
 
