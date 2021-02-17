@@ -18,7 +18,7 @@
         "livewire/livewire": "^1.1",
         "nicolaslopezj/searchable": "^1.12",
         "orangehill/iseed": "^2.6",
-        "srmklive/paypal": "~1.0",
+        "paypal/paypal-checkout-sdk": "1.0.1",
         "tcg/voyager": "1.4.*"
     },
     "require-dev": {
