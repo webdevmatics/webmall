@@ -26,9 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::take(30)->get();
+        $products = Product::with('shop.owner')->take(30)->get();
 
-        $categories = Category::whereNull('parent_id')->get();
+        $categories = Category::with('children.children')->whereNull('parent_id')->get();
 
 
         return view('home', ['allProducts' => $products,'categories'=>$categories]);

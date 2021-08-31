@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3",
+        "php": "^7.2||^8.0",
         "darryldecode/cart": "^4.1",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^8.0",
@@ -17,7 +17,7 @@
         "laravel/ui": "^3.0",
         "livewire/livewire": "^1.1",
         "nicolaslopezj/searchable": "^1.12",
-        "orangehill/iseed": "^2.6",
+        "orangehill/iseed": "^3.0",
         "paypal/paypal-checkout-sdk": "1.0.1",
         "tcg/voyager": "1.4.*"
     },
