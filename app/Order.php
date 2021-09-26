@@ -52,4 +52,13 @@ class Order extends Model
         }
 
     }
+
+    public function markDeclined()
+    {
+
+        $this->status = 'decline';
+        $this->save();
+
+        $this->subOrders()->update(['status'=>'decline']);
+    }
 }

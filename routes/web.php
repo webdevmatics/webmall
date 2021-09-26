@@ -29,7 +29,7 @@ Route::get('/cart/update/{itemId}', 'CartController@update')->name('cart.update'
 Route::get('/cart/checkout', 'CartController@checkout')->name('cart.checkout')->middleware('auth');
 Route::get('/cart/apply-coupon', 'CartController@applyCoupon')->name('cart.coupon')->middleware('auth');
 
-Route::resource('orders', 'OrderController')->middleware('auth');
+Route::resource('orders', 'OrderController')->only('store')->middleware('auth');
 
 Route::resource('shops','ShopController')->middleware('auth');
 
@@ -40,12 +40,8 @@ Route::get('paypal/checkout-cancel', 'PayPalController@cancelPage')->name('paypa
 
 
 Route::group(['prefix' => 'admin'], function () {
-
     Voyager::routes();
-
     Route::get('/order/pay/{suborder}', 'SubOrderController@pay')->name('order.pay');
-
-
 });
 
 

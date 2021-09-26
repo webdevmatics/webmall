@@ -46,9 +46,25 @@
                         <li><a href="#"><i class="pe-7s-users"></i>My Account</a></li>
                         <li><a data-toggle="modal" data-target="#exampleCompare" href="#"><i
                                     class="pe-7s-repeat"></i>Compare</a></li>
-                        <li><a href="wishlist.html"><i class="pe-7s-like"></i>Wishlist</a></li>
-                        <li><a href="#"><i class="pe-7s-flag"></i>US</a></li>
-                        <li><a class="border-none" href="#"><span>$</span>USD</a></li>
+                        {{-- <li><a href="wishlist.html"><i class="pe-7s-like"></i>Wishlist</a></li> --}}
+
+                        @auth
+                        <li>
+                                <form action=" {{ url('/logout') }} " method="POST">
+                                    @csrf
+                                    <input type="submit" value="Logout" />
+                                </form>
+                        </li>
+                            @else
+
+                            <li>
+                                <a href="{{url('/login')}}">Login</a>
+                            </li>
+                            <li>
+                                <a href="{{url('/register')}}">Sign Up</a>
+                            </li>
+                        @endauth
+
                     </ul>
                 </div>
             </div>
