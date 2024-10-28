@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Livewire\Component;
 
@@ -12,19 +12,15 @@ class MallCart extends Component
 
     protected $listeners = ['cartUpdated' => 'onCartUpdate'];
 
+    public function onCartUpdate()
+    {
+        // $this->cartItems = \Cart::session(auth()->id())->getContent()->toArray();
+        $this->mount();
+    }
 
     public function mount()
     {
         $this->cartItems = \Cart::session(auth()->id())->getContent()->toArray();
-    }
-
-    public function onCartUpdate()
-    {
-
-        // $this->cartItems = \Cart::session(auth()->id())->getContent()->toArray();
-        $this->mount();
-
-
     }
 
     public function render()

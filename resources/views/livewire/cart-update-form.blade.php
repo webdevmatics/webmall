@@ -1,5 +1,5 @@
 <div>
 
-        <input wire:model="quantity"  type="number" wire:change="updateCart">
+    <input wire:model.live="quantity" type="number" wire:change="updateCart">
 
 </div>

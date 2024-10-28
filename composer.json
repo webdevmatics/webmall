@@ -8,24 +8,24 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2||^8.1",
+        "php": "^7.2||^8.2",
         "darryldecode/cart": "^4.1",
-        "laravel/framework": "^10.0",
+        "laravel/framework": "^11.0",
         "laravel/legacy-factories": "^1.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^4.0",
-        "livewire/livewire": "^2",
+        "livewire/livewire": "^3.4",
         "nicolaslopezj/searchable": "^1.12",
         "orangehill/iseed": "^3.0",
         "paypal/paypal-checkout-sdk": "1.0.1",
-        "tcg/voyager": "dev-1.6-l10"
+        "tcg/voyager": "^1.8"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.4",
         "spatie/laravel-ignition": "^2.0",
         "mockery/mockery": "^1.0",
         "fakerphp/faker": "^1.23",
-        "nunomaduro/collision": "^7.1",
+        "nunomaduro/collision": "^8.1",
         "phpunit/phpunit": "^10.0"
     },
     "config": {

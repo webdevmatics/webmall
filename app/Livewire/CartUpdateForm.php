@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Livewire\Component;
 
@@ -21,7 +21,6 @@ class CartUpdateForm extends Component
 
     public function updateCart()
     {
-
         \Cart::session(auth()->id())->update($this->item['id'], [
             'quantity' => [
                 'relative' => false,
@@ -29,7 +28,7 @@ class CartUpdateForm extends Component
             ]
         ]);
 
-        $this->emit('cartUpdated');
+        $this->dispatch('cartUpdated');
     }
 
     public function render()
