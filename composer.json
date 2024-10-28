@@ -8,26 +8,25 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2||^8.0",
+        "php": "^7.2||^8.1",
         "darryldecode/cart": "^4.1",
-        "fideloper/proxy": "^4.0",
-        "laravel/framework": "^8.0",
+        "laravel/framework": "^10.0",
         "laravel/legacy-factories": "^1.1",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^3.0",
-        "livewire/livewire": "^1.1",
+        "laravel/ui": "^4.0",
+        "livewire/livewire": "^2",
         "nicolaslopezj/searchable": "^1.12",
         "orangehill/iseed": "^3.0",
         "paypal/paypal-checkout-sdk": "1.0.1",
-        "tcg/voyager": "1.4.*"
+        "tcg/voyager": "dev-1.6-l10"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.4",
-        "facade/ignition": "^2.3.6",
-        "fzaninotto/faker": "^1.9.1",
+        "spatie/laravel-ignition": "^2.0",
         "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.0"
+        "fakerphp/faker": "^1.23",
+        "nunomaduro/collision": "^7.1",
+        "phpunit/phpunit": "^10.0"
     },
     "config": {
         "optimize-autoloader": true,
@@ -53,7 +52,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "scripts": {
         "post-autoload-dump": [
